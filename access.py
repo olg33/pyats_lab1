@@ -23,7 +23,7 @@ def main():
     #print(f"\nResponse from testbed1 is of type {type(response)} and length {len(response)}")
     print(response)
     print(json.dumps(response, indent=4))
-    #print(response.keys())
+    print(response.keys())
 
     # MIR-LAB IOS-XE Device
     device = testbed.devices['GE_HUB1_INT_HRT1.MIR']
@@ -33,7 +33,16 @@ def main():
     print(response)    
     print(json.dumps(response, indent=4))
     print(response.keys())
-     
+
+    # MIR-LAB IOS-XE-V Device
+    device = testbed.devices['CSR1k-MIR_01.rt']
+    device.connect()
+    response = device.parse('show ip int brief') 
+    #print(f"\nResponse from testbed1 is of type {type(response)} and length {len(response)}")
+    print(response)    
+    print(json.dumps(response, indent=4))
+    print(response.keys()) 
+
 # Standard call to the main() function.
 if __name__ == '__main__':
     main()
