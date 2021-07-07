@@ -1,0 +1,41 @@
+---
+testbed:
+  name: MIR_Lab_Devices
+
+devices:                                 
+  GE_HUB1_INT_SW1.MIR:
+    connections:
+      cli:
+        ip: 10.214.8.4
+        protocol: ssh 
+        port: 22
+    credentials:
+      default:
+        username: oscarl   
+        password: "%ENC{w5jDrsOGw6HDlMOCwpzCmw==}"
+    type: Nexus9000v
+    os: nxos                        
+  CSR1k-MIR_01.rt:
+    connections:
+      cli:
+        ip: 10.18.1.3
+        protocol: ssh
+        port: 22
+    credentials:
+      default:
+        username: Administrator 
+        password: "%ENC{w53DrcOPwqfCpsKPwpbCmg==}"           
+    type: CSR1000v                        
+    os: iosxe
+  GE_HUB1_INT_HRT1.MIR:
+    connections:
+      cli:
+        ip: 10.214.8.1
+        protocol: telnet
+        port: 23
+    credentials:
+      default:
+        username: oscarl 
+        password: "%ENC{w5jDrsOGw6HDlMOCwpzCmw==}"           
+    type: ASR1001-X                        
+    os: iosxe  
